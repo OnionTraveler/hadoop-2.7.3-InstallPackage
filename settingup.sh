@@ -3,8 +3,10 @@ ipmaster=192.168.233.153
 ipslaver1=192.168.233.151
 ipslaver2=192.168.233.152
 #=========================0
-cd /tmp; [ -e hadoop-2.7.3-InstallPackage ] && cp /tmp/hadoop-2.7.3-InstallPackage/installations/* /tmp/
-cd /tmp; [ -e hadoop-2.7.3-InstallPackage ] && mv /tmp/hadoop-2.7.3-InstallPackage/revision /tmp/
+cd /tmp; [ -e hadoop-2.7.3-InstallPackage ] && mv /tmp/hadoop-2.7.3-InstallPackage/installations/* /tmp/
+cd /tmp; [ -e hadoop-2.7.3-InstallPackage ] && mv -r /tmp/hadoop-2.7.3-InstallPackage/revision /tmp/
+cd /tmp; [ -e hadoop-2.7.3-InstallPackage ] && mv -r /tmp/hadoop-2.7.3-InstallPackage/OperatingManual.txt ~
+cd /tmp; [ -e hadoop-2.7.3-InstallPackage ] && mv -r /tmp/hadoop-2.7.3-InstallPackage/restartANDstop ~
 
 
 #=========================1
@@ -265,11 +267,13 @@ ONION
 
 
 #=========================12
-rm -r -f /tmp/hadoop-2.7.3-InstallPackage
 rm -r -f /tmp/description  
 rm -r -f /tmp/jdk-8u144-linux-x64.rpm
 rm -r -f /tmp/jdk-8u144-linux-x64.rpm.md5
 rm -r -f /tmp/hadoop-2.7.3.tar.gz 
 rm -r -f /tmp/revision 
 rm -r -f /tmp/zookeeper-3.4.9.tar.gz
+rm -r -f /tmp/hadoop-2.7.3-InstallPackage/installations/
+rm -r -f /tmp/hadoop-2.7.3-InstallPackage/revision/
+rm -r -f ~/OperatingManual.txt
 
