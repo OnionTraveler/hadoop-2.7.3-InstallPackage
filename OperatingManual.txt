@@ -1,0 +1,11 @@
+All ssh setting should be completed before you source settingup.sh
+Including: (# ssh-keygen -t rsa -f ~/.ssh/id_rsa -P "")
+	master -> master   「# cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys」
+	master -> slaver1  「# ssh-copy-id -i ~/.ssh/id_rsa.pub root@ipslaver1」
+	master -> slaver2  「# ssh-copy-id -i ~/.ssh/id_rsa.pub root@ipslaver2」
+
+	slaver1 -> slaver1 「# cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys」
+	slaver1 -> master  「# ssh-copy-id -i ~/.ssh/id_rsa.pub root@ipmaster」
+	slaver1 -> slaver2 「# ssh-copy-id -i ~/.ssh/id_rsa.pub root@ipslaver2」
+
+Also, you should change their IP in the settingup.sh, too!
