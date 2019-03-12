@@ -1,0 +1,12 @@
+The files source is as following.
+     java: 
+	# wget https://mail-tp.fareoffice.com/java/jdk-8u144-linux-x64.rpm
+
+     java.md5:
+	# wget https://mail-tp.fareoffice.com/java/jdk-8u144-linux-x64.rpm.md5
+
+     hadoop-2.7.3: 
+	# wget https://archive.apache.org/dist/hadoop/core/hadoop-2.7.3/hadoop-2.7.3.tar.gz
+
+     zookeeper-3.4.9: 
+	# wget https://archive.apache.org/dist/zookeeper/zookeeper-3.4.9/zookeeper-3.4.9.tar.gz
