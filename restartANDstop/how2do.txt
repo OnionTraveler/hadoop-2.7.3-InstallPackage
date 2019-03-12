@@ -1,0 +1,6 @@
+# how to restart all hadoop deamons:
+    #「# source auto-restart.sh」 in master
+# how to stop all hadoop deamons:
+    #「# source auto-stop.sh」 in master and Use
+    #「# kill -9 xxxx」to stop the deamon QuorumPeerMain(zookeeper) in master and slavers
+
