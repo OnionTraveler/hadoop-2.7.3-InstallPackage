@@ -9,3 +9,5 @@ Including: (# ssh-keygen -t rsa -f ~/.ssh/id_rsa -P "")
 	slaver1 -> slaver2 「# ssh-copy-id -i ~/.ssh/id_rsa.pub root@ipslaver2」
 
 Also, you should change their IP in the settingup.sh, too!
+
+*REMEMBER move the directory hadoop-2.7.3-InstallPackage to /tmp before settingup.sh, or it will be something wrong during satting up!
