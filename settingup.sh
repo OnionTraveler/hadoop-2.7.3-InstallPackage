@@ -4,9 +4,9 @@ ipslaver1=192.168.233.151
 ipslaver2=192.168.233.152
 #=========================0
 cd /tmp; [ -e hadoop-2.7.3-InstallPackage ] && mv /tmp/hadoop-2.7.3-InstallPackage/installations/* /tmp/
-cd /tmp; [ -e hadoop-2.7.3-InstallPackage ] && mv -r /tmp/hadoop-2.7.3-InstallPackage/revision /tmp/
-cd /tmp; [ -e hadoop-2.7.3-InstallPackage ] && mv -r /tmp/hadoop-2.7.3-InstallPackage/OperatingManual.txt ~
-cd /tmp; [ -e hadoop-2.7.3-InstallPackage ] && mv -r /tmp/hadoop-2.7.3-InstallPackage/restartANDstop ~
+cd /tmp; [ -e hadoop-2.7.3-InstallPackage ] && mv /tmp/hadoop-2.7.3-InstallPackage/revision /tmp/
+cd /tmp; [ -e hadoop-2.7.3-InstallPackage ] && mv /tmp/hadoop-2.7.3-InstallPackage/OperatingManual.txt ~
+cd /tmp; [ -e hadoop-2.7.3-InstallPackage ] && mv /tmp/hadoop-2.7.3-InstallPackage/restartANDstop ~
 
 
 #=========================1
