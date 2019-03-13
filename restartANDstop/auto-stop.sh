@@ -1,4 +1,5 @@
 #!/bin/bash
+source /etc/profile
 stop-all.sh
 
 masterzkpid=`jps | grep 'QuorumPeerMain' | cut -d' ' -f1`
