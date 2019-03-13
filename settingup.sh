@@ -87,13 +87,11 @@ source /etc/profile
 ssh $ipslaver1 /bin/bash << ONION
 hostname slaver1
 echo slaver1 > /etc/hostname
-source /etc/profile
 ONION
 
 ssh $ipslaver2 /bin/bash << ONION
 hostname slaver2
 echo slaver2 > /etc/hostname
-source /etc/profile
 ONION
 
 
@@ -163,16 +161,13 @@ scp -rp /opt/zookeeper root@slaver2:/opt/zookeeper
 
 #=========================
 echo 1 > /opt/zookeeper/myid
-source /etc/profile
 
 ssh slaver1 /bin/bash << ONION
 echo 2 > /opt/zookeeper/myid
-source /etc/profile
 ONION
 
 ssh slaver2 /bin/bash << ONION
 echo 3 > /opt/zookeeper/myid
-source /etc/profile
 ONION
 
 
@@ -186,6 +181,7 @@ scp -rp /opt/hadoop-2.7.3/ root@slaver2:/opt/hadoop-2.7.3
 scp -rp /etc/profile root@slaver1:/etc/profile
 scp -rp /etc/profile root@slaver2:/etc/profile
 
+#???
 
 #=========================6
 ln -s /opt/hadoop-2.7.3 /opt/hadoop
@@ -206,29 +202,36 @@ ONION
 
 
 #=========================7
+source /etc/profile
 /opt/zookeeper/bin/zkServer.sh start
 sleep 5
+
 ssh slaver1 /bin/bash << ONION
+source /etc/profile
 /opt/zookeeper/bin/zkServer.sh start
 sleep 5
 ONION
 
 ssh slaver2 /bin/bash << ONION
+source /etc/profile
 /opt/zookeeper/bin/zkServer.sh start
 sleep 5
 ONION
 
 
 #=========================8
+source /etc/profile
 hadoop-daemon.sh start journalnode
 sleep 5
 
 ssh slaver1 /bin/bash << ONION
+source /etc/profile
 /opt/hadoop/sbin/hadoop-daemon.sh  start journalnode #hadoop-daemon.sh start journalnode
 sleep 5
 ONION
 
 ssh slaver2 /bin/bash << ONION
+source /etc/profile
 /opt/hadoop/sbin/hadoop-daemon.sh  start journalnode #hadoop-daemon.sh start journalnode
 sleep 5
 ONION
@@ -259,6 +262,7 @@ start-all.sh
 
 #=========================11
 ssh slaver1 /bin/bash << ONION
+source /etc/profile
 sleep 5
 /opt/hadoop/bin/hdfs namenode -bootstrapStandby #hdfs namenode -bootstrapStandby
 sleep 5
