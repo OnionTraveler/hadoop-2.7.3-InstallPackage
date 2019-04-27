@@ -1,5 +1,5 @@
 All ssh setting should be completed before you source settingup.sh
-Including: (# ssh-keygen -t rsa -f ~/.ssh/id_rsa -P "")
+*Including: (# ssh-keygen -t rsa -f ~/.ssh/id_rsa -P "")
 	master -> master   「# cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys」
 	master -> slaver1  「# ssh-copy-id -i ~/.ssh/id_rsa.pub root@ipslaver1」
 	master -> slaver2  「# ssh-copy-id -i ~/.ssh/id_rsa.pub root@ipslaver2」
@@ -8,6 +8,9 @@ Including: (# ssh-keygen -t rsa -f ~/.ssh/id_rsa -P "")
 	slaver1 -> master  「# ssh-copy-id -i ~/.ssh/id_rsa.pub root@ipmaster」
 	slaver1 -> slaver2 「# ssh-copy-id -i ~/.ssh/id_rsa.pub root@ipslaver2」
 
-Also, you should change their IP in the settingup.sh, too!
+*You MUST test whether ssh connection succeed or not! 「# ssh master」「# ssh ipslaver1」「# ssh ipslaver2」
+*Of course, 「# service ssh start」 before testing!
 
-*REMEMBER move the directory hadoop-2.7.3-InstallPackage to /tmp before settingup.sh, or it will be something wrong during satting up!
+*Also, you SHOULD change their IP in the settingup.sh, too!
+
+*REMEMBER move the directory hadoop-2.7.3-InstallPackage to /tmp before settingup.sh, or it will be something wrong during setting up!
