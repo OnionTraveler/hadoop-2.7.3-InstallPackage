@@ -1,7 +1,7 @@
 #!/bin/bash
-ipmaster=192.168.233.153
-ipslaver1=192.168.233.151
-ipslaver2=192.168.233.152
+ipmaster=192.168.233.153 # 172.17.0.2
+ipslaver1=192.168.233.151 # 172.17.0.3
+ipslaver2=192.168.233.152 # 172.17.0.4
 #=========================0
 cd /tmp; [ -e hadoop-2.7.3-InstallPackage ] && mv /tmp/hadoop-2.7.3-InstallPackage/installations/* /tmp/
 cd /tmp; [ -e hadoop-2.7.3-InstallPackage ] && mv /tmp/hadoop-2.7.3-InstallPackage/revision /tmp/
@@ -32,13 +32,13 @@ scp -rp /etc/profile $ipslaver2:/etc/profile
 
 
 ssh $ipslaver1 /bin/bash << ONION
-#yum clean; yum -y update; yum -y install wget git ntp
+yum clean; yum -y update; yum -y install wget git ntp
 cd /tmp; yum -y localinstall /tmp/jdk-8u144-linux-x64.rpm || echo "jdk file is not complete when it's setup before..." || exit
 ln -s /usr/java/jdk1.8.0_144/ /usr/java/java
 ONION
 
 ssh $ipslaver2 /bin/bash << ONION
-#yum clean; yum -y update; yum -y install wget git ntp
+yum clean; yum -y update; yum -y install wget git ntp
 cd /tmp; yum -y localinstall /tmp/jdk-8u144-linux-x64.rpm || echo "jdk file is not complete when it's setup before..." || exit
 ln -s /usr/java/jdk1.8.0_144/ /usr/java/java
 ONION
