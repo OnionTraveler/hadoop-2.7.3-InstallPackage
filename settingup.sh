@@ -1,7 +1,7 @@
 #!/bin/bash
-ipmaster=192.168.233.153 # 172.17.0.3
-ipslaver1=192.168.233.151 # 172.17.0.4
-ipslaver2=192.168.233.152 # 172.17.0.5
+ipmaster=192.168.233.153 # 172.17.0.2
+ipslaver1=192.168.233.151 # 172.17.0.3
+ipslaver2=192.168.233.152 # 172.17.0.4
 #=========================0
 cd /tmp; [ -e hadoop-2.7.3-InstallPackage ] && mv /tmp/hadoop-2.7.3-InstallPackage/installations/* /tmp/
 cd /tmp; [ -e hadoop-2.7.3-InstallPackage ] && mv /tmp/hadoop-2.7.3-InstallPackage/revision /tmp/
@@ -10,7 +10,7 @@ cd /tmp; [ -e hadoop-2.7.3-InstallPackage ] && mv /tmp/hadoop-2.7.3-InstallPacka
 
 
 #=========================1
-yum clean all; yum -y update; yum -y install wget git ntp
+yum clean; yum -y update; yum -y install wget git ntp
 cd /tmp; [ -e jdk-8u144-linux-x64.rpm ] && echo "The 「java」 file has existed" || wget https://mail-tp.fareoffice.com/java/jdk-8u144-linux-x64.rpm
 cd /tmp; [ -e jdk-8u144-linux-x64.rpm.md5 ] && echo "The 「java.md5」 file has existed" || wget https://mail-tp.fareoffice.com/java/jdk-8u144-linux-x64.rpm.md5 
 cd /tmp; jdk_md5=$(wc -c < jdk-8u144-linux-x64.rpm.md5); [ $jdk_md5 -ne 58 ] && sed -i 's/$/  jdk-8u144-linux-x64.rpm/g' jdk-8u144-linux-x64.rpm.md5
@@ -280,4 +280,5 @@ rm -r -f /tmp/zookeeper-3.4.9.tar.gz
 rm -r -f /tmp/hadoop-2.7.3-InstallPackage/installations/
 rm -r -f /tmp/hadoop-2.7.3-InstallPackage/revision/
 rm -r -f ~/OperatingManual.txt
-
+ssh slaver1 'rm -r -f /tmp/jdk-8u144-linux-x64.rpm'
+ssh slaver2 'rm -r -f /tmp/jdk-8u144-linux-x64.rpm'
