@@ -1,0 +1,2 @@
+# how to use「spark-install.sh」to install spark:
+    #「# source spark-install.sh」in master after you successfully install hadoop and start hadoop deamons first!
