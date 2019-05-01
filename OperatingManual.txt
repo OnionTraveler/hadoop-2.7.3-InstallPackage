@@ -14,3 +14,9 @@ All ssh setting should be completed before you source settingup.sh
 *Also, you SHOULD change their IP in the settingup.sh, too!
 
 *REMEMBER move the directory hadoop-2.7.3-InstallPackage to /tmp before settingup.sh, or it will be something wrong during setting up!
+
+
+<<PS>>
+**You should「source change2apt.sh」to automatically revise settingup.sh if you use apt-get in Debian or Ubuntu!!
+
+**You STILL CHECK whether IPs are correct again before you source settingup.sh
