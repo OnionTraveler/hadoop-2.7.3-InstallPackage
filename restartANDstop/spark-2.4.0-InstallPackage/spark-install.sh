@@ -15,6 +15,10 @@ echo 'export SPARK_HOME=~/.spark-2.4.0-bin-hadoop2.7' >> ~/.bashrc
 echo 'export PATH=$SPARK_HOME/bin:$PATH' >> ~/.bashrc
 echo 'export PYSPARK_PYTHON=python3' >> ~/.bashrc
 echo 'export PYSPARK_DRIVER_PYTHON=ipython3' >> ~/.bashrc
-source ~/.bashrc
 
-rm -r -f ~/restartANDstop/spark-2.4.0-InstallPackage
+source ~/.bashrc
+source /etc/profile
+source ~/restartANDstop/spark_StartStop/stop-all.sh
+source ~/restartANDstop/spark_StartStop/start-all.sh
+
+cd; rm -r -f ~/restartANDstop/spark-2.4.0-InstallPackage

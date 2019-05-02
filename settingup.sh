@@ -180,7 +180,6 @@ scp -rp /opt/hadoop-2.7.3/ root@slaver2:/opt/hadoop-2.7.3
 scp -rp /etc/profile root@slaver1:/etc/profile
 scp -rp /etc/profile root@slaver2:/etc/profile
 
-#???
 
 #=========================6
 ln -s /opt/hadoop-2.7.3 /opt/hadoop
@@ -283,4 +282,4 @@ rm -r -f /tmp/hadoop-2.7.3-InstallPackage/revision/
 rm -r -f /tmp/hadoop-2.7.3-InstallPackage/OperatingManual.txt
 rm -r -f /tmp/hadoop-2.7.3-InstallPackage/change2apt.sh
 rm -r -f /tmp/hadoop-2.7.3-InstallPackage/ipchange.sh
-rm -r -f /tmp/hadoop-2.7.3-InstallPackage/
+cd; rm -r -f /tmp/hadoop-2.7.3-InstallPackage/
