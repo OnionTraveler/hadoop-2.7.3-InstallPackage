@@ -11,7 +11,7 @@ All ssh setting should be completed before you source settingup.sh
 *You MUST test whether ssh connection succeed or not! 「# ssh master」「# ssh ipslaver1」「# ssh ipslaver2」
 *Of course, 「# service ssh start」 before testing!
 
-*Also, you SHOULD change their IP in the settingup.sh, too! (You can use 「source ipchange.sh」 to modify all ip in settingup.sh; HOWEVER, Remember to double check what it writes in ipchange.sh when you use it!!!))
+*Also, you SHOULD change their IP in the settingup.sh by using 「source ipchange.sh」 to modify all ips in settingup.sh; HOWEVER, Remember to 「FIX ABSOLUTELY CORRECT IPs」 in the ipchange.sh when you use it!!!))
 
 *REMEMBER move the directory hadoop-2.7.3-InstallPackage to /tmp before settingup.sh, or it will be something wrong during setting up!
 

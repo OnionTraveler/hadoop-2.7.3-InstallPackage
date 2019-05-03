@@ -1,7 +1,7 @@
 #!/bin/bash
-ipmaster=192.168.233.153 # 172.17.0.2
-ipslaver1=192.168.233.151 # 172.17.0.3
-ipslaver2=192.168.233.152 # 172.17.0.4
+ipmaster=xxx.xxx.xxx.xxx  # 192.168.233.153 # 172.17.0.2
+ipslaver1=xxx.xxx.xxx.xxx # 192.168.233.151 # 172.17.0.3
+ipslaver2=xxx.xxx.xxx.xxx # 192.168.233.152 # 172.17.0.4
 #=========================0
 cd /tmp; [ -e hadoop-2.7.3-InstallPackage ] && mv /tmp/hadoop-2.7.3-InstallPackage/installations/* /tmp/
 cd /tmp; [ -e hadoop-2.7.3-InstallPackage ] && mv /tmp/hadoop-2.7.3-InstallPackage/revision /tmp/
