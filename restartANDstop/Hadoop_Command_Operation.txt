@@ -1,0 +1,25 @@
+#定義(Definition)
+1.「HDFS檔名路徑」-> 在HDFS上從跟目錄(「/」)下的檔案名稱【絕對】路徑
+2.「HDFS目錄路徑」-> 在HDFS上從跟目錄(「/」)下的目錄名稱【絕對】路徑
+3. 可在其前面加上IP來特別指定非本機上的HDFS系統 -> hdfs://172.17.0.2/「HDFS檔名(目錄)【絕對】路徑」
+
+4.「local檔名路徑」-> 在目前本機上從跟目錄(「/」)下的檔案名稱【絕對|相對】路徑
+5.「local目錄路徑」-> 在目前本機上從跟目錄(「/」)下的目錄名稱【絕對|相對】路徑
+
+
+#hadoop指令(Hadoop Command Operation)
+1. hadoop fs -ls 「HDFS目錄路徑」
+
+1. 新增目錄 -> hadoop fs -mkdir 「HDFS目錄路徑」
+2. 刪除目錄 -> hadoop fs -rmr 「HDFS檔名路徑」
+
+1. 新增檔案 -> hadoop fs -touchz 「HDFS檔名路徑」
+2. 刪除檔案 -> hadoop fs -rm 「HDFS檔名路徑」
+3. 檢視檔案 -> hadoop fs -cat 「HDFS檔名路徑」
+
+1. 移動檔案(目錄) -> hadoop fs -mv 「HDFS檔案(目錄)路徑」 「HDFS檔案(目錄)路徑」
+2. 複製檔案(目錄) -> hadoop fs -cp 「HDFS檔案(目錄)路徑」 「HDFS檔案(目錄)路徑」
+
+1. 上載檔案 -> hadoop fs -put 「local檔名路徑」「HDFS目錄路徑」
+2. 下載檔案 -> hadoop fs -get 「HDFS檔名路徑」 「local目錄路徑」
+
