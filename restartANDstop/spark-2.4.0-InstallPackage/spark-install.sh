@@ -3,8 +3,8 @@ mkdir ../hadoop_StartStop ../spark_StartStop
 mv ../auto-restart.sh ../hadoop_StartStop
 mv ../auto-stop.sh ../hadoop_StartStop
 mv ../how2do.txt ../hadoop_StartStop
-echo '�~@~Lsource start-all.sh�~@~M�~@~PAFTER�~@~Q you start hadoop deamons in hadoop_StartStop directory' >> ../spark_StartStop/how2do4spark.txt
-echo '�~@~Lsource stop-all.sh�~@~M�~@~PBEFORE�~@~Q you stop hadoop deamons in hadoop_StartStop directory' >> ../spark_StartStop/how2do4spark.txt
+echo '「source start-all.sh」【PAFTER】 you start hadoop deamons in hadoop_StartStop directory' >> ../spark_StartStop/how2do4spark.txt
+echo '「source stop-all.sh」【BEFORE】 you stop hadoop deamons in hadoop_StartStop directory' >> ../spark_StartStop/how2do4spark.txt
 
 cd /tmp; wget https://archive.apache.org/dist/spark/spark-2.4.0/spark-2.4.0-bin-hadoop2.7.tgz && tar zxvf /tmp/spark-2.4.0-bin-hadoop2.7.tgz && rm /tmp/spark-2.4.0-bin-hadoop2.7.tgz
 cd /tmp; mv spark-2.4.0-bin-hadoop2.7 .spark-2.4.0-bin-hadoop2.7 && mv .spark-2.4.0-bin-hadoop2.7 ~
