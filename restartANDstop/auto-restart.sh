@@ -1,36 +1,40 @@
 #!/bin/bash
+ipmaster=192.168.233.153 # 172.17.0.2
+ipslaver1=192.168.233.151 # 172.17.0.3
+ipslaver2=192.168.233.152 # 172.17.0.4
 #=========================
 source /etc/profile
 /opt/zookeeper/bin/zkServer.sh start
-sleep 5
-ssh slaver1 /bin/bash << ONION
+sleep 3
+
+ssh $ipslaver1 /bin/bash << ONION
 source /etc/profile
 /opt/zookeeper/bin/zkServer.sh start
-sleep 5
+sleep 3
 ONION
 
-ssh slaver2 /bin/bash << ONION
+ssh $ipslaver2 /bin/bash << ONION
 source /etc/profile
 /opt/zookeeper/bin/zkServer.sh start
-sleep 5
+sleep 3
 ONION
 
 
 #=========================
 source /etc/profile
 hadoop-daemon.sh start journalnode
-sleep 5
+sleep 3
 
-ssh slaver1 /bin/bash << ONION
+ssh $ipslaver1 /bin/bash << ONION
 source /etc/profile
 /opt/hadoop/sbin/hadoop-daemon.sh  start journalnode #hadoop-daemon.sh start journalnode
-sleep 5
+sleep 3
 ONION
 
-ssh slaver2 /bin/bash << ONION
+ssh $ipslaver2 /bin/bash << ONION
 source /etc/profile
 /opt/hadoop/sbin/hadoop-daemon.sh  start journalnode #hadoop-daemon.sh start journalnode
-sleep 5
+sleep 3
 ONION
 
 
@@ -38,4 +42,3 @@ ONION
 sleep 5
 source /etc/profile
 start-all.sh
-
