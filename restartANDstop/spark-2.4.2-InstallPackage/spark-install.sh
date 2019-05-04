@@ -68,11 +68,26 @@ echo 'export PATH=$SPARK_HOME/bin:$PATH' >> ~/.bashrc
 echo 'export PYSPARK_PYTHON=python3' >> ~/.bashrc
 echo 'export PYSPARK_DRIVER_PYTHON=ipython3' >> ~/.bashrc
 
-
 source ~/.bashrc
 source /etc/profile
+
+cp ~/.spark-2.4.2-bin-hadoop2.7/conf/spark-env.sh.template ~/.spark-2.4.2-bin-hadoop2.7/conf/spark-env.sh 
+cat >> ~/.spark-2.4.2-bin-hadoop2.7/conf/spark-env.sh  << ONION
+export SCALA_HOME=/usr/scala/scala
+export JAVA_HOME=/usr/java/java
+export HADOOP_HOME=/opt/hadoop/
+export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
+SPARK_MASTER_IP=$ipmaster
+SPARK_LOCAL_DIRS=~/.spark-2.4.2-bin-hadoop2.7
+SPARK_DRIVER_MEMORY=1G
+ONION
+
+scp -r ~/.spark-2.4.2-bin-hadoop2.7 spark@$ipslave1:~
+scp -r ~/.spark-2.4.2-bin-hadoop2.7 spark@$ipslave2:~
+
+
+
 source ~/restartANDstop/spark_StartStop/stop-all4Spark.sh
 source ~/restartANDstop/spark_StartStop/start-all4Spark.sh
-
 cd; rm -r -f ~/restartANDstop/spark-2.4.2-InstallPackage
 
