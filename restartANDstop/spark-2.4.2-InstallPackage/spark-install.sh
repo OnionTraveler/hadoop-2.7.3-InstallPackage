@@ -9,7 +9,6 @@ echo 'export PATH=$SCALA_HOME/bin:$PATH' >> /etc/profile
 source /etc/profile
 
 
-
 #========================= (for spark-2.4.2-bin-hadoop2.7)
 mkdir ../hadoop_StartStop ../spark_StartStop
 mv ../auto-restart.sh ../hadoop_StartStop
