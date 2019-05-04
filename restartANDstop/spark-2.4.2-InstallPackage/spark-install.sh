@@ -1,4 +1,16 @@
 #!/bin/bash
+#========================= (for scala2.12.8)
+source /etc/profile
+cd /tmp; wget https://downloads.lightbend.com/scala/2.12.8/scala-2.12.8.tgz && tar zxvf /tmp/scala-2.12.8.tgz && rm /tmp/scala-2.12.8.tgz
+cd /tmp; mkdir /usr/scala && mv scala-2.12.8 /usr/scala && ln -s /usr/scala/scala-2.12.8 /usr/scala/scala
+ln -s /usr/java/jdk1.8.0_144/ /usr/java/java
+echo 'export SCALA_HOME=/usr/scala/scala' >> /etc/profile
+echo 'export PATH=$SCALA_HOME/bin:$PATH' >> /etc/profile
+source /etc/profile
+
+
+
+#========================= (for spark-2.4.2-bin-hadoop2.7)
 mkdir ../hadoop_StartStop ../spark_StartStop
 mv ../auto-restart.sh ../hadoop_StartStop
 mv ../auto-stop.sh ../hadoop_StartStop
