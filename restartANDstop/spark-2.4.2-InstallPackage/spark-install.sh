@@ -1,12 +1,41 @@
 #!/bin/bash
+ipmaster=xxx.xxx.xxx.xxx  # 192.168.233.153 # 172.17.0.2
+ipslaver1=xxx.xxx.xxx.xxx # 192.168.233.151 # 172.17.0.3
+ipslaver2=xxx.xxx.xxx.xxx # 192.168.233.152 # 172.17.0.4
+
+
 #========================= (for scala2.12.8)
 source /etc/profile
-cd /tmp; wget https://downloads.lightbend.com/scala/2.12.8/scala-2.12.8.tgz && tar zxvf /tmp/scala-2.12.8.tgz && rm /tmp/scala-2.12.8.tgz
+cd /tmp; wget https://downloads.lightbend.com/scala/2.12.8/scala-2.12.8.tgz && tar zxvf /tmp/scala-2.12.8.tgz
 cd /tmp; mkdir /usr/scala && mv scala-2.12.8 /usr/scala && ln -s /usr/scala/scala-2.12.8 /usr/scala/scala
 ln -s /usr/java/jdk1.8.0_144/ /usr/java/java
 echo 'export SCALA_HOME=/usr/scala/scala' >> /etc/profile
 echo 'export PATH=$SCALA_HOME/bin:$PATH' >> /etc/profile
 source /etc/profile
+
+scp -rp /tmp/scala-2.12.8.tgz  $ipslaver1:/tmp/scala-2.12.8.tgz 
+scp -rp /tmp/scala-2.12.8.tgz  $ipslaver2:/tmp/scala-2.12.8.tgz 
+
+scp -rp /etc/profile $ipslaver1:/etc/profile
+scp -rp /etc/profile $ipslaver2:/etc/profile
+
+ssh $ipslaver1 /bin/bash << ONION
+cd /tmp; tar zxvf /tmp/scala-2.12.8.tgz
+cd /tmp; mkdir /usr/scala && mv scala-2.12.8 /usr/scala && ln -s /usr/scala/scala-2.12.8 /usr/scala/scala
+ln -s /usr/java/jdk1.8.0_144/ /usr/java/java
+source /etc/profile
+ONION
+
+ssh $ipslaver2 /bin/bash << ONION
+cd /tmp; tar zxvf /tmp/scala-2.12.8.tgz
+cd /tmp; mkdir /usr/scala && mv scala-2.12.8 /usr/scala && ln -s /usr/scala/scala-2.12.8 /usr/scala/scala
+ln -s /usr/java/jdk1.8.0_144/ /usr/java/java
+source /etc/profile
+ONION
+
+rm -f /tmp/scala-2.12.8.tgz
+ssh $ipslaver1 'rm -f /tmp/scala-2.12.8.tgz'
+ssh $ipslaver2 'rm -f /tmp/scala-2.12.8.tgz'
 
 
 #========================= (for spark-2.4.2-bin-hadoop2.7)
