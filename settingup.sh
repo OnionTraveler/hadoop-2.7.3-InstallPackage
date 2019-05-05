@@ -246,15 +246,17 @@ source /etc/profile
 hadoop-daemon.sh start journalnode
 sleep 3
 
+#hadoop-daemon.sh start journalnode
 ssh slaver1 /bin/bash << ONION
 source /etc/profile
-/opt/hadoop/sbin/hadoop-daemon.sh  start journalnode #hadoop-daemon.sh start journalnode
+/opt/hadoop/sbin/hadoop-daemon.sh start journalnode 
 sleep 3
 ONION
 
+#hadoop-daemon.sh start journalnode
 ssh slaver2 /bin/bash << ONION
 source /etc/profile
-/opt/hadoop/sbin/hadoop-daemon.sh  start journalnode #hadoop-daemon.sh start journalnode
+/opt/hadoop/sbin/hadoop-daemon.sh start journalnode 
 sleep 3
 ONION
 
@@ -286,9 +288,13 @@ start-all.sh
 ssh slaver1 /bin/bash << ONION
 source /etc/profile
 sleep 3
-/opt/hadoop/bin/hdfs namenode -bootstrapStandby #hdfs namenode -bootstrapStandby
+
+#hdfs namenode -bootstrapStandby
+/opt/hadoop/bin/hdfs namenode -bootstrapStandby 
 sleep 3
-/opt/hadoop/sbin/hadoop-daemon.sh start namenode #hadoop-daemon.sh start namenode
+
+#hadoop-daemon.sh start namenode
+/opt/hadoop/sbin/hadoop-daemon.sh start namenode 
 ONION
 
 
