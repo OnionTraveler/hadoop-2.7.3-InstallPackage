@@ -52,13 +52,14 @@ ssh $ipslaver2 'rm -f /tmp/scala-2.12.8.tgz'
 
 
 #========================= (for spark-2.4.2-bin-hadoop2.7) =========================#
-mkdir ../hadoop_StartStop ../spark_StartStop
-mv ../auto-restart.sh ../hadoop_StartStop
-mv ../auto-stop.sh ../hadoop_StartStop
-mv ../how2do.txt ../hadoop_StartStop
-mv ../Hadoop_Command_Operation.txt ../hadoop_StartStop 
-echo '「source start-all.sh」【AFTER】 you start hadoop deamons in hadoop_StartStop directory' >> ../spark_StartStop/how2do4spark.txt
-echo '「source stop-all.sh」【BEFORE】 you stop hadoop deamons in hadoop_StartStop directory' >> ../spark_StartStop/how2do4spark.txt
+cd ~/restartANDstop/
+mkdir hadoop_StartStop spark_StartStop
+mv auto-restart.sh hadoop_StartStop
+mv auto-stop.sh hadoop_StartStop
+mv how2do.txt hadoop_StartStop
+mv Hadoop_Command_Operation.txt hadoop_StartStop 
+echo '「source start-all.sh」【AFTER】 you start hadoop deamons in hadoop_StartStop directory' >> ./spark_StartStop/how2do4spark.txt
+echo '「source stop-all.sh」【BEFORE】 you stop hadoop deamons in hadoop_StartStop directory' >> ./spark_StartStop/how2do4spark.txt
 
 
 #========================= (下載spark-2.4.2-bin-hadoop2.7執行檔)
