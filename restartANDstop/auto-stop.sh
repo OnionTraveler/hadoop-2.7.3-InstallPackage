@@ -22,3 +22,4 @@ sleep 1
 ssh $ipslaver2 /bin/bash << ONION
 jps | grep 'QuorumPeerMain' | cut -d' ' -f1 | xargs kill -9
 ONION
+
