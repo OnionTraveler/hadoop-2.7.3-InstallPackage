@@ -7,7 +7,7 @@ ipslaver2=xxx.xxx.xxx.xxx # 192.168.233.152 # 172.17.0.4
 
 
 #========================= (for scala2.12.8) =========================#
-#spark是用scala寫的，故安裝執行啟動spark前，scala預先安裝在各節點且可執行是必要的！
+#Spark是用Scala寫的，故安裝執行啟動Spark前，Scala預先安裝在各節點且可執行是必要的！
 #========================= (下載scala-2.12.8執行檔)
 source /etc/profile
 cd /tmp; wget https://downloads.lightbend.com/scala/2.12.8/scala-2.12.8.tgz; tar zxvf /tmp/scala-2.12.8.tgz
