@@ -86,7 +86,7 @@ echo 'export PYSPARK_DRIVER_PYTHON=ipython3' >> ~/.bashrc
 
 #========================= (spark啟動時(start-all.sh)所讀取的環境變數設定)
 cp /opt/spark-2.4.2-bin-hadoop2.7/conf/spark-env.sh.template /opt/spark-2.4.2-bin-hadoop2.7/conf/spark-env.sh 
-cat >> /opt/spark-2.4.2-bin-hadoop2.7/conf/spark-env.sh  << ONION
+cat >> /opt/spark-2.4.2-bin-hadoop2.7/conf/spark-env.sh << ONION
 export SCALA_HOME=/usr/scala/scala
 export JAVA_HOME=/usr/java/java
 export HADOOP_HOME=/opt/hadoop/
@@ -99,9 +99,9 @@ ONION
 
 #========================= (spark啟動時(start-all.sh)所讀取節點IP的位置設定)
 cp /opt/spark-2.4.2-bin-hadoop2.7/conf/slaves.template /opt/spark-2.4.2-bin-hadoop2.7/conf/slaves
-cat >> /opt/spark-2.4.2-bin-hadoop2.7/conf/spark-env.sh  << ONION
-$ipslave1
-$ipslave2
+cat >> /opt/spark-2.4.2-bin-hadoop2.7/conf/slaves << ONION
+$ipslaver1
+$ipslaver2
 ONION
 
 
