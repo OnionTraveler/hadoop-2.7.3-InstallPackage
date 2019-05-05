@@ -97,9 +97,10 @@ SPARK_DRIVER_MEMORY=1G
 ONION
 
 
-#========================= (spark啟動時(start-all.sh)所讀取節點IP的位置設定)
+#========================= (spark啟動時(start-all.sh)所讀取節點IP的位置設定) (那空白不能略!!)
 cp /opt/spark-2.4.2-bin-hadoop2.7/conf/slaves.template /opt/spark-2.4.2-bin-hadoop2.7/conf/slaves
 cat >> /opt/spark-2.4.2-bin-hadoop2.7/conf/slaves << ONION
+
 $ipslaver1
 $ipslaver2
 ONION
@@ -113,7 +114,11 @@ scp -r /opt/spark-2.4.2-bin-hadoop2.7 root@$ipslaver2:/opt/spark-2.4.2-bin-hadoo
 #========================= (啟動Spark資源管理器(Spark Standalone))
 source ~/.bashrc
 source /etc/profile
+
+sleep 3
 source ~/restartANDstop/spark_StartStop/stop-all4Spark.sh
+
+sleep 3
 source ~/restartANDstop/spark_StartStop/start-all4Spark.sh
 
 
