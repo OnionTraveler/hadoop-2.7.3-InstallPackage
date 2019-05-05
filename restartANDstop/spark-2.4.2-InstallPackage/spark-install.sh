@@ -106,8 +106,8 @@ ONION
 
 
 #========================= (spark啟動時(start-all.sh)各節點當然必須亦有在相同位置的spark執行檔與其相同的變數設定)
-scp -r /opt/spark-2.4.2-bin-hadoop2.7 root@$ipslave1:/opt/spark-2.4.2-bin-hadoop2.7
-scp -r /opt/spark-2.4.2-bin-hadoop2.7 root@$ipslave2:/opt/spark-2.4.2-bin-hadoop2.7
+scp -r /opt/spark-2.4.2-bin-hadoop2.7 root@$ipslaver1:/opt/spark-2.4.2-bin-hadoop2.7
+scp -r /opt/spark-2.4.2-bin-hadoop2.7 root@$ipslaver2:/opt/spark-2.4.2-bin-hadoop2.7
 
 
 #========================= (啟動Spark資源管理器(Spark Standalone))
