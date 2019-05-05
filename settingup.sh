@@ -12,6 +12,9 @@ cd /tmp; [ -e hadoop-2.7.3-InstallPackage ] && mv /tmp/hadoop-2.7.3-InstallPacka
 cd /tmp; [ -e hadoop-2.7.3-InstallPackage ] && mv /tmp/hadoop-2.7.3-InstallPackage/restartANDstop ~
 
 
+
+
+
 #========================= (for jdk-8u144-linux-x64 (java -version 1.8.0_144)) =========================#
 #Hadoop是用Java寫的，故安裝執行啟動Hadoop前，Java預先安裝在各節點且可執行是必要的！
 #========================= (下載jdk-8u144-linux-x64.rpm安裝檔)
