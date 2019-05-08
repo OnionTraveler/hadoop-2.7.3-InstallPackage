@@ -58,6 +58,7 @@ mv auto-restart.sh hadoop_StartStop
 mv auto-stop.sh hadoop_StartStop
 mv how2do.txt hadoop_StartStop
 mv Hadoop_Command_Operation.txt hadoop_StartStop 
+mv RestartHosts hadoop_StartStop
 echo '「source start-all.sh」【AFTER】 you start hadoop deamons in hadoop_StartStop directory' >> ./spark_StartStop/how2do4spark.txt
 echo '「source stop-all.sh」【BEFORE】 you stop hadoop deamons in hadoop_StartStop directory' >> ./spark_StartStop/how2do4spark.txt
 

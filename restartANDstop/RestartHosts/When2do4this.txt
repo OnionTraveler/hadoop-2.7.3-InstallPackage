@@ -1,0 +1,4 @@
+Your 「/etc/hosts」 document profile will be RESET after you use "docker restart" or "docker stop & docker start" to restart container(s)(especially master)!!!
+Hence, when you restart container(s)(especially master), you MUST 「source restartHosts.sh」 agian BEFORE you start hadoop(「source auto-restart.sh」)!!!
+
+

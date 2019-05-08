@@ -29,3 +29,10 @@ sed -i "s/ipmaster=xxx.xxx.xxx.xxx/ipmaster=$ipmaster/g" ./restartANDstop/spark-
 sed -i "s/ipslaver1=xxx.xxx.xxx.xxx/ipslaver1=$ipslaver1/g" ./restartANDstop/spark-2.4.2-InstallPackage/spark-install.sh
 sed -i "s/ipslaver2=xxx.xxx.xxx.xxx/ipslaver2=$ipslaver2/g" ./restartANDstop/spark-2.4.2-InstallPackage/spark-install.sh
 
+
+#=========================2 (for restartHosts.sh)
+sed -i "s/ipmaster=xxx.xxx.xxx.xxx/ipmaster=$ipmaster/g" ./restartANDstop/RestartHosts/restartHosts.sh
+sed -i "s/ipslaver1=xxx.xxx.xxx.xxx/ipslaver1=$ipslaver1/g" ./restartANDstop/RestartHosts/restartHosts.sh
+sed -i "s/ipslaver2=xxx.xxx.xxx.xxx/ipslaver2=$ipslaver2/g" ./restartANDstop/RestartHosts/restartHosts.sh
+
+
