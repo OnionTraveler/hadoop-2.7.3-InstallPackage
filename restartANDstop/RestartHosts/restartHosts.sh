@@ -22,9 +22,8 @@ sleep 1
 ssh $ipslaver1 'source /etc/profile'
 
 
-sleep 3
-scp -rp /etc/hosts root@$ipslaver2:/etc/hosts
 sleep 2
+scp -rp /etc/hosts root@$ipslaver2:/etc/hosts
+sleep 1
 ssh $ipslaver2 'source /etc/profile'
-
 
