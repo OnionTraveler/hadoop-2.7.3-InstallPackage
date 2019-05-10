@@ -93,7 +93,7 @@ export JAVA_HOME=/usr/java/java
 export HADOOP_HOME=/opt/hadoop/
 export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
 SPARK_MASTER_IP=$ipmaster
-SPARK_LOCAL_DIRS=~/.spark-2.4.2-bin-hadoop2.7
+SPARK_LOCAL_DIRS=/opt/spark-2.4.2-bin-hadoop2.7/
 SPARK_DRIVER_MEMORY=1G
 ONION
 
