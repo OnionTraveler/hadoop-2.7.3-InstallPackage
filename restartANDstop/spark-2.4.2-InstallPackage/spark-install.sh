@@ -59,9 +59,9 @@ mv auto-stop.sh hadoop_StartStop
 mv how2do.txt hadoop_StartStop
 mv Hadoop_Command_Operation.txt hadoop_StartStop 
 mv RestartHosts hadoop_StartStop
-echo '「source start-all.sh」【AFTER】 you start hadoop deamons in hadoop_StartStop directory' >> ./spark_StartStop/how2do4spark.txt
-echo '「source stop-all.sh」【BEFORE】 you stop hadoop deamons in hadoop_StartStop directory' >> ./spark_StartStop/how2do4spark.txt
-
+echo '「source start-all.sh」【AFTER】 you start hadoop deamons in hadoop_StartStop directory' >> spark_StartStop/how2do4spark.txt
+echo '「source stop-all.sh」【BEFORE】 you stop hadoop deamons in hadoop_StartStop directory' >> spark_StartStop/how2do4spark.txt
+mv spark-2.4.2-InstallPackage/pythonpackages4sparkdl.txt spark_StartStop
 
 #========================= (下載spark-2.4.2-bin-hadoop2.7執行檔)
 cd /tmp; [ -e spark-2.4.2-bin-hadoop2.7.tgz ] && echo "The 「spark-2.4.2-bin-hadoop2.7」 file has existed" || wget https://archive.apache.org/dist/spark/spark-2.4.2/spark-2.4.2-bin-hadoop2.7.tgz
@@ -110,6 +110,21 @@ ONION
 #========================= (spark啟動時(start-all.sh)各節點當然必須亦有在相同位置的spark執行檔與其相同的變數設定)
 scp -r /opt/spark-2.4.2-bin-hadoop2.7 root@$ipslaver1:/opt/spark-2.4.2-bin-hadoop2.7
 scp -r /opt/spark-2.4.2-bin-hadoop2.7 root@$ipslaver2:/opt/spark-2.4.2-bin-hadoop2.7
+
+
+#========================= (spark啟動時(start-all.sh)其預設會使用"python"這個指令連結，故須將其建立軟連結(導向)至python3使得packages匯入等預設操作不會因python版本不同而出錯)
+ln -s /usr/bin/python3 /usr/bin/python
+ln -s /usr/bin/pip3 /usr/bin/pip
+
+ssh $ipslaver1 /bin/bash << ONION
+ln -s /usr/bin/python3 /usr/bin/python
+ln -s /usr/bin/pip3 /usr/bin/pip
+ONION
+
+ssh $ipslaver2 /bin/bash << ONION
+ln -s /usr/bin/python3 /usr/bin/python
+ln -s /usr/bin/pip3 /usr/bin/pip
+ONION
 
 
 #========================= (啟動Spark資源管理器(Spark Standalone))
