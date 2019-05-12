@@ -90,11 +90,12 @@ cp /opt/spark-2.4.2-bin-hadoop2.7/conf/spark-env.sh.template /opt/spark-2.4.2-bi
 cat >> /opt/spark-2.4.2-bin-hadoop2.7/conf/spark-env.sh << ONION
 export SCALA_HOME=/usr/scala/scala
 export JAVA_HOME=/usr/java/java
-export HADOOP_HOME=/opt/hadoop/
+export HADOOP_HOME=/opt/hadoop
 export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HADOOP_HOME/lib/native
 SPARK_MASTER_IP=$ipmaster
 SPARK_LOCAL_DIRS=/opt/spark-2.4.2-bin-hadoop2.7/
-SPARK_DRIVER_MEMORY=1G
+SPARK_DRIVER_MEMORY=2G
 ONION
 
 
