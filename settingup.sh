@@ -111,7 +111,7 @@ ONION
 
 
 
-#========================= (for spark-2.4.2-bin-hadoop2.7) =========================#
+#========================= (for hadoop-2.7.3) =========================#
 #HADOOP安裝過程:
 #========================= (下載hadoop-2.7.3.tar.gz執行檔)
 cd /tmp; [ -e hadoop-2.7.3.tar.gz ] && echo "The 「hadoop-2.7.3」 file has existed" || wget https://archive.apache.org/dist/hadoop/core/hadoop-2.7.3/hadoop-2.7.3.tar.gz
