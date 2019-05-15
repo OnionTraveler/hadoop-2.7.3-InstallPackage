@@ -25,9 +25,9 @@ sed -i "s/ipslaver2=xxx.xxx.xxx.xxx/ipslaver2=$ipslaver2/g" ./restartANDstop/aut
 
 
 #=========================3 (for spark-install.sh)
-sed -i "s/ipmaster=xxx.xxx.xxx.xxx/ipmaster=$ipmaster/g" ./restartANDstop/spark-2.4.2-InstallPackage/spark-install.sh
-sed -i "s/ipslaver1=xxx.xxx.xxx.xxx/ipslaver1=$ipslaver1/g" ./restartANDstop/spark-2.4.2-InstallPackage/spark-install.sh
-sed -i "s/ipslaver2=xxx.xxx.xxx.xxx/ipslaver2=$ipslaver2/g" ./restartANDstop/spark-2.4.2-InstallPackage/spark-install.sh
+sed -i "s/ipmaster=xxx.xxx.xxx.xxx/ipmaster=$ipmaster/g" ./restartANDstop/spark-2.3.1-InstallPackage/spark-install.sh
+sed -i "s/ipslaver1=xxx.xxx.xxx.xxx/ipslaver1=$ipslaver1/g" ./restartANDstop/spark-2.3.1-InstallPackage/spark-install.sh
+sed -i "s/ipslaver2=xxx.xxx.xxx.xxx/ipslaver2=$ipslaver2/g" ./restartANDstop/spark-2.3.1-InstallPackage/spark-install.sh
 
 
 #=========================4 (for restartHosts.sh)
