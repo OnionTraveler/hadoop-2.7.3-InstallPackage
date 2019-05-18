@@ -30,14 +30,12 @@ scp -rp /etc/profile $ipslaver2:/etc/profile
 ssh $ipslaver1 /bin/bash << ONION
 cd /tmp; tar zxvf /tmp/scala-2.11.8.tgz
 cd /tmp; mkdir /usr/scala && mv scala-2.11.8 /usr/scala && ln -s /usr/scala/scala-2.11.8 /usr/scala/scala
-ln -s /usr/java/jdk1.8.0_144/ /usr/java/java
 source /etc/profile
 ONION
 
 ssh $ipslaver2 /bin/bash << ONION
 cd /tmp; tar zxvf /tmp/scala-2.11.8.tgz
 cd /tmp; mkdir /usr/scala && mv scala-2.11.8 /usr/scala && ln -s /usr/scala/scala-2.11.8 /usr/scala/scala
-ln -s /usr/java/jdk1.8.0_144/ /usr/java/java
 source /etc/profile
 ONION
 
